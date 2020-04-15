@@ -1,11 +1,9 @@
 scriptname _eu_CCOR_PlayerAliasHDTCloakSwap extends ReferenceAlias
 
-;Thank you Chesko for guiding me through this script <3 - Euphy
+; Big thanks to Chesko for guiding me through this script! - Euphy
 
-; Player actor reference
 Actor property PlayerRef auto
 
-; Original CCOR cloaks
 Armor property CoSCloakForswornAlt auto
 Armor property CoSCloakBurned auto
 Armor property CoSCloakAshlander1 auto
@@ -16,7 +14,6 @@ Armor property CoSCloakNecroAlt auto
 Armor property CoSCloakDwemer auto
 Armor property CoSCloakDwemerAlt auto
 Armor property CoSCloakWarmSands auto
-;;Armor property CoSCloakDragonPriest auto
 Armor property CoSCloakWildHunt auto
 Armor property CoSCloakNecro auto
 Armor property CoSCloakShortLover auto
@@ -25,14 +22,6 @@ Armor property CoSCloakShortBlackTalos auto
 Armor property CoSCloakShortSilverhand auto
 Armor property CoSCloakShortStormcloak auto
 Armor property CoSCloakShortMossy auto
-;;Armor property CoSCloakDPOtar auto
-;;Armor property CoSCloakDPVokun auto
-;;Armor property CoSCloakDPVolsung auto
-;;Armor property CoSCloakDPRahgot auto
-;;Armor property CoSCloakDPKrosis auto
-;;Armor property CoSCloakDPMorokei auto
-;;Armor property CoSCloakDPHevnoraak auto
-;;Armor property CoSCloakDPNahkriin auto
 Armor property CoSCloakBlackBurlap auto
 Armor property CoSCloakBlueBurlap auto
 Armor property CoSCloakBrownBurlap auto
@@ -121,14 +110,12 @@ Armor property CoSCloakWhiterun auto
 Armor property CoSCloakWinterhold auto
 Armor property CoSCloakSolitude auto
 Armor property CoSCloakHimirHide auto
-;;Armor property CoSCloakDaedric auto
 Armor property CoSCloakShortComp auto
 Armor property CoSCloakShortImperial auto
 Armor property CoSCloakScale auto
 Armor property CoSCloakDawnguard auto
 Armor property CoSCloakShortDawnguard auto
 
-; HDT variant of Cloaks of Skyrim cloaks
 Armor property HDTCloakForswornAlt auto
 Armor property HDTCloakBurned auto
 Armor property HDTCloakAshlander1 auto
@@ -139,7 +126,6 @@ Armor property HDTCloakNecroAlt auto
 Armor property HDTCloakDwemer auto
 Armor property HDTCloakDwemerAlt auto
 Armor property HDTCloakWarmSands auto
-;;Armor property HDTCloakDragonPriest auto
 Armor property HDTCloakWildHunt auto
 Armor property HDTCloakNecro auto
 Armor property HDTCloakShortLover auto
@@ -148,14 +134,6 @@ Armor property HDTCloakShortBlackTalos auto
 Armor property HDTCloakShortSilverhand auto
 Armor property HDTCloakShortStormcloak auto
 Armor property HDTCloakShortMossy auto
-;;Armor property HDTCloakDPOtar auto
-;;Armor property HDTCloakDPVokun auto
-;;Armor property HDTCloakDPVolsung auto
-;;Armor property HDTCloakDPRahgot auto
-;;Armor property HDTCloakDPKrosis auto
-;;Armor property HDTCloakDPMorokei auto
-;;Armor property HDTCloakDPHevnoraak auto
-;;Armor property HDTCloakDPNahkriin auto
 Armor property HDTCloakBlackBurlap auto
 Armor property HDTCloakBlueBurlap auto
 Armor property HDTCloakBrownBurlap auto
@@ -244,36 +222,27 @@ Armor property HDTCloakWhiterun auto
 Armor property HDTCloakWinterhold auto
 Armor property HDTCloakSolitude auto
 Armor property HDTCloakHimirHide auto
-;;Armor property HDTCloakDaedric auto
 Armor property HDTCloakShortComp auto
 Armor property HDTCloakShortImperial auto
 Armor property HDTCloakScale auto
 Armor property HDTCloakDawnguard auto
 Armor property HDTCloakShortDawnguard auto
 Armor property HDTCampfireBasicBurlap auto
-;Armor property HDTCampfireBasicFur auto
 Armor property HDTCampfireBasicHide auto
 Armor property HDTCampfireBasicLinen auto
 
-; Original Cloaks of Skyrim array
 Armor[] property OriginalCloaks auto
 
-; HDT variant array
 Armor[] property HDTCloaks auto
 
 Event OnInit()
-	; Initialize the arrays
 	if !OriginalCloaks
 		OriginalCloaks = new Armor[128]
 	endif
 	if !HDTCloaks
 		HDTCloaks = new Armor[128]
 	endif
-	
-	bool isCampfireLoaded = IsPluginLoaded("Campfire.esm")
-    if isCampfireLoaded
 
-	; Set the values for the OriginalCloaks array
 	OriginalCloaks[0] = CoSCloakForswornAlt
 	OriginalCloaks[1] = CoSCloakBurned
 	OriginalCloaks[2] = CoSCloakAshlander1
@@ -395,12 +364,7 @@ Event OnInit()
 	OriginalCloaks[118] = CoSCloakScale
 	OriginalCloaks[119] = CoSCloakDawnguard
 	OriginalCloaks[120] = CoSCloakShortDawnguard
-    OriginalCloaks[121] = Game.GetFormFromFile(0x03FA9C, "Campfire.esm") as Armor ; _Camp_Cloak_BasicBurlap
-    OriginalCloaks[122] = Game.GetFormFromFile(0x03FA9F, "Campfire.esm") as Armor ; _Camp_Cloak_BasicHide
-    OriginalCloaks[123] = Game.GetFormFromFile(0x03FA9D, "Campfire.esm") as Armor ; _Camp_Cloak_BasicLinen
-	;OriginalCloaks[124] = Game.GetFormFromFile(0x03FA9E, "Campfire.esm") as Armor ; _Camp_Cloak_BasicFur
 
-	; Set the values for the HDTCloaks array
 	HDTCloaks[0] = HDTCloakForswornAlt
 	HDTCloaks[1] = HDTCloakBurned
 	HDTCloaks[2] = HDTCloakAshlander1
@@ -522,14 +486,19 @@ Event OnInit()
 	HDTCloaks[118] = HDTCloakScale
 	HDTCloaks[119] = HDTCloakDawnguard
 	HDTCloaks[120] = HDTCloakShortDawnguard
-	HDTCloaks[121] = HDTCampfireBasicBurlap
-	HDTCloaks[122] = HDTCampfireBasicHide
-	HDTCloaks[123] = HDTCampfireBasicLinen
-	;HDTCloaks[124] = HDTCampfireBasicFur
-   
-   endif
 	
+    bool isCampfireLoaded = IsPluginLoaded("Campfire.esm")
+    if isCampfireLoaded
+        OriginalCloaks[121] = Game.GetFormFromFile(0x03FA9C, "Campfire.esm") as Armor ; _Camp_Cloak_BasicBurlap
+        OriginalCloaks[122] = Game.GetFormFromFile(0x03FA9F, "Campfire.esm") as Armor ; _Camp_Cloak_BasicHide
+        OriginalCloaks[123] = Game.GetFormFromFile(0x03FA9D, "Campfire.esm") as Armor ; _Camp_Cloak_BasicLinen
+   
+    	HDTCloaks[121] = HDTCampfireBasicBurlap
+		HDTCloaks[122] = HDTCampfireBasicHide
+		HDTCloaks[123] = HDTCampfireBasicLinen
+   endif
 EndEvent
+
 bool function IsPluginLoaded(string sPluginName)
     int i = Game.GetModByName(sPluginName)
     if i != 255
@@ -542,11 +511,11 @@ endFunction
 
 Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer)
 
-    if akBaseItem as Armor  ; Let's weed out anything that isn't armor, no point in continuing if it isn't. This helps performance.
+    if akBaseItem as Armor
         int idx = OriginalCloaks.Find(akBaseItem as Armor)
-        if idx != -1 && HDTCloaks[idx] != none     ; If we found this item in our original cloak array AND we have a form in the other array for this cloak...
-            PlayerRef.RemoveItem(akBaseItem, aiItemCount, abSilent = true)      ; Get rid of the original cloak (silently)
-            PlayerRef.AddItem(HDTCloaks[idx], aiItemCount, abSilent = true)     ; Add our new fancy HDT cloak (silently)
+        if idx != -1 && HDTCloaks[idx] != none   
+            PlayerRef.RemoveItem(akBaseItem, aiItemCount, abSilent = true)   
+            PlayerRef.AddItem(HDTCloaks[idx], aiItemCount, abSilent = true)    
         endif
 		
     endif
